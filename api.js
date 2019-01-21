@@ -35,14 +35,14 @@ window.discordClient = function(token) {
          'authorization',    token
       ], null, callback);
    };
-   self.reactToMessage = function(channelId, messageId, reaction, callback) {
+   self.addReaction = function(channelId, messageId, reaction, callback) {
       self.httpRequest('PUT', '/api/v6/channels/' + channelId + '/messages/' + messageId + '/reactions/' + reaction + '/@me', [
          'x-requested-with', 'XMLHttpRequest',
          'content-type',     'application/x-www-form-urlencoded; charset=UTF-8',
          'authorization',    token
       ], null, callback);
    };
-   self.removeReactionToMessage = function(channelId, messageId, reaction, callback) {
+   self.removeReaction = function(channelId, messageId, reaction, callback) {
       self.httpRequest('DELETE', '/api/v6/channels/' + channelId + '/messages/' + messageId + '/reactions/' + reaction + '/@me', [
          'x-requested-with', 'XMLHttpRequest',
          'content-type',     'application/x-www-form-urlencoded; charset=UTF-8',
