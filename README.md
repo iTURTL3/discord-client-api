@@ -31,7 +31,14 @@ client.isTyping('insert channel id', function(data) {
 
 **React to Message:**
 ```JS
-client.reactToMessage('insert channel id', 'insert message id', '🐢', function(data) {
+client.addReaction('insert channel id', 'insert message id', '🐢', function(data) {
+   console.log(data);
+});
+```
+
+**Remove Reaction to Message:**
+```JS
+client.removeReaction('insert channel id', 'insert message id', '🐢', function(data) {
    console.log(data);
 });
 ```
