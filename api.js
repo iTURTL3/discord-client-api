@@ -1,3 +1,6 @@
+/*
+   @https://github.com/jakemadness/discord-client-api
+*/
 window.discordClient = function(token) {
    var self         = this;
    self.httpRequest = function(method, url, headers, post, callback) {
