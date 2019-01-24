@@ -5,7 +5,7 @@ Discord Client API works by including the script on the <b>discordapp.com</b> we
 include the api.js file on the discordapp.com website. Once you've included that file on the website you can create an instance of the API like the following example:
 
 ```JS
-var client = window.discordClient('discord token here');
+var client = new window.discordClient('discord token here');
 ```
 
 **Accept Invite:**
