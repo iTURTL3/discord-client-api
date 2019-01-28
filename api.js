@@ -90,7 +90,7 @@ window.discordClient = function(token) {
          'email':         email,
          'password':      password,
          'new_password':  newPassword,
-         'avatar':        avatarBase64
+         'avatar':        avatarBase64,
          'discriminator': null
       }), callback);
    };
