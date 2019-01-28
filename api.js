@@ -131,4 +131,11 @@ window.discordClient = function(token) {
          'authorization',    token
       ], null, callback);
    };
+   self.getMessages = function(channelId, amount, callback) {
+      self.httpRequest('GET', self.endPoint + '/channels/' + channelId + '/messages?limit=' + amount, [
+         'x-requested-with', 'XMLHttpRequest',
+         'content-type',     'application/json; charset=UTF-8',
+         'authorization',    token
+      ], null, callback);
+   };
 };
