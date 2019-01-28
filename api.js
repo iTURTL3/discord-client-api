@@ -80,7 +80,7 @@ window.discordClient = function(token) {
          'status': status
       }), callback);
    };
-   self.updateAvatar = function(username, email, base64, callback) {
+   self.updateUserSettings = function(username, email, avatarBase64, callback) {
       self.httpRequest('PATCH', self.endPoint + '/users/@me', [
          'x-requested-with', 'XMLHttpRequest',
          'content-type',     'application/json; charset=UTF-8',
@@ -88,7 +88,7 @@ window.discordClient = function(token) {
       ], JSON.stringify({
          'username':      username,
          'email':         email,
-         'avatar':        base64,
+         'avatar':        avatarBase64,
          'password':      '',
          'new_password':  null,
          'discriminator': null
