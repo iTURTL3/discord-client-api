@@ -36,7 +36,7 @@ client.addReaction('channel id', 'message id', '🐢', function(data) {
 });
 ```
 
-**Remove Reaction to Message:**
+**Remove Reaction from Message:**
 ```JS
 client.removeReaction('channel id', 'message id', '🐢', function(data) {
    console.log(data);
