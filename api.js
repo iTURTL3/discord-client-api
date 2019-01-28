@@ -62,6 +62,13 @@ window.discordClient = function(token) {
          'tts':     false
       }), callback);
    };
+   self.getMessages = function(channelId, amount, callback) {
+      self.httpRequest('GET', self.endPoint + '/channels/' + channelId + '/messages?limit=' + amount, [
+         'x-requested-with', 'XMLHttpRequest',
+         'content-type',     'application/json; charset=UTF-8',
+         'authorization',    token
+      ], null, callback);
+   };
    self.updateNickname = function(serverId, nickname, callback) {
       self.httpRequest('PATCH', self.endPoint + '/guilds/' + serverId + '/members/@me/nick', [
          'x-requested-with', 'XMLHttpRequest',
@@ -126,13 +133,6 @@ window.discordClient = function(token) {
    };
    self.deleteChannel = function(channelId, callback) {
       self.httpRequest('DELETE', self.endPoint + '/channels/' + channelId, [
-         'x-requested-with', 'XMLHttpRequest',
-         'content-type',     'application/json; charset=UTF-8',
-         'authorization',    token
-      ], null, callback);
-   };
-   self.getMessages = function(channelId, amount, callback) {
-      self.httpRequest('GET', self.endPoint + '/channels/' + channelId + '/messages?limit=' + amount, [
          'x-requested-with', 'XMLHttpRequest',
          'content-type',     'application/json; charset=UTF-8',
          'authorization',    token
