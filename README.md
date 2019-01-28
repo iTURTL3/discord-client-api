@@ -66,14 +66,14 @@ client.updateNickname('online', function(data) {
 
 **Update User Settings:**
 ```JS
-client.updateAvatar('username', 'email', 'password', 'new password', 'data:image/jpeg;base64,H8jkq..', function(data) {
+client.updateAvatar('username', 'email', 'password', 'new password', 'data:image/jpeg;base64,Hq..', function(data) {
    console.log(data);
 });
 ```
 
 **Create Server**
 ```JS
-client.createServer('my new server', 'eu-west', 'data:image/jpeg;base64,H8jkq..', function(data) {
+client.createServer('my new server', 'eu-west', 'data:image/jpeg;base64,H8q..', function(data) {
    console.log(data);
 });
 ```
