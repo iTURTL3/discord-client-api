@@ -66,7 +66,8 @@ client.updateNickname('online', function(data) {
 
 **Update User Settings:**
 ```JS
-client.updateAvatar('username', 'email', 'password', 'new password', 'data:image/jpeg;base64,Hq..', function(data) {
+client.updateAvatar('username', 'email', 'password', 'new password', 'data:image/jpeg;base64,Hq..',
+function(data) {
    console.log(data);
 });
 ```
