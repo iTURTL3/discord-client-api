@@ -50,6 +50,13 @@ client.sendMessage('channel id', 'my message', 'insert nonce', function(data) {
 });
 ```
 
+**Get Messages**
+```JS
+client.getMessages('channel id', 50, function(data) {
+   console.log(data);
+});
+```
+
 **Update Nickname:**
 ```JS
 client.updateNickname('server id', 'new nickname', function(data) {
