@@ -1,7 +1,6 @@
 window.discordClientApi = function(token) {
    var self         = this;
-   self.apiVersion  = 6;
-   self.apiURL      = 'https://discordapp.com/api/v' + self.apiVersion + '/';
+   self.apiBase     = 'https://discordapp.com/api/v6/';
    self.httpRequest = function(method, url, headers, post, callback) {
       var request = new XMLHttpRequest();
       request.onreadystatechange = function() {
@@ -14,7 +13,7 @@ window.discordClientApi = function(token) {
       request.send(post);
    };
    self.apiRequest = function(method, path, post, callback) {
-      self.httpRequest(method, self.apiURL + path, [
+      self.httpRequest(method, self.apiBase + path, [
          'x-requested-with', 'XMLHttpRequest',
          'authorization',    token,
          'content-type',     post ? 'application/json' : 'application/x-www-form-urlencoded'
