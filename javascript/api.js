@@ -3,8 +3,9 @@ window.discordClientApi = function(token) {
    /*
       CLASS VARIABLES.
    */
-   var self     = this;
-   self.apiBase = 'https://discordapp.com/api/v6/';
+   var self      = this;
+   self.apiToken = token;
+   self.apiBase  = 'https://discordapp.com/api/v6/';
 
    /*
       REUSABLE FUNCTIONS.
@@ -24,7 +25,7 @@ window.discordClientApi = function(token) {
    self.apiRequest = function(method, path, post, callback) {
       self.httpRequest(method, self.apiBase + path, [
          'x-requested-with', 'XMLHttpRequest',
-         'authorization',    token,
+         'authorization',    self.apiToken,
          'content-type',     post ? 'application/json' : 'application/x-www-form-urlencoded'
       ], post, callback);
    };
