@@ -8,7 +8,7 @@ class discord_client_api {
    private static $api_base  = 'https://discordapp.com/api/v6/';
 
    /*
-      REUSABLE FUNCTIONS
+      REUSABLE FUNCTIONS.
    */
    function __construct($token) {
       self::$api_token = $token;
@@ -34,7 +34,7 @@ class discord_client_api {
    }
 
    /*
-      MAIN FUNCTIONS
+      MAIN FUNCTIONS.
    */
    public static function join_server($invite_code) {
       return self::api_request('POST', 'invite/' . $invite_code, null);
