@@ -107,5 +107,9 @@ class discord_client_api {
       return self::api_request('DELETE', 'guilds/' . $server_id . '/roles/' . $role_id, null);
    }
 
+   public static function join_hypesquad($house_number) {
+      return self::api_request('POST', 'hypesquad/online', json_encode(array('house_id' => $house_number)));
+   }
+
 }
 ?>
