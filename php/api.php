@@ -1,4 +1,7 @@
 <?php
+/*
+   @https://github.com/jakemadness/discord-client-api/tree/master/php
+*/
 class discord_client_api {
 
    /*
