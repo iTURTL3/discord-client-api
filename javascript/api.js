@@ -1,3 +1,6 @@
+/*
+   @https://github.com/jakemadness/discord-client-api/tree/master/javascript
+*/
 window.discordClientApi = function(token) {
 
    /*
