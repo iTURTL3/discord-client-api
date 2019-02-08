@@ -101,4 +101,8 @@ window.discordClientApi = function(token) {
       self.apiRequest('DELETE', 'guilds/' + serverId + '/roles/' + roleId, null, callback);
    };
 
+   self.joinHypesquad = function(houseNumber, callback) {
+      self.apiRequest('POST', 'hypesquad/online', JSON.stringify({'house_id': houseNumber}), callback);
+   };
+
 };
