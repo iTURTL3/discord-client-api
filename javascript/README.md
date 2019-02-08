@@ -80,8 +80,7 @@ client.updateStatus('dnd', function(data) {
 
 **Update User Settings:**
 ```JS
-client.updateUserSettings('username', 'email', 'password', 'new password', 'data:image/jpeg;base64,Hq..',
-function(data) {
+client.updateUserSettings('username', 'email', 'password', 'new password', 'data:image/jpeg;base64,Hq..', function(data) {
    console.log(data);
 });
 ```
