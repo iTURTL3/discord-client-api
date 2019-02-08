@@ -128,7 +128,7 @@ client.deleteRole('server id', 'role id', function(data) {
 });
 ```
 
-**Delete Role:**
+**Join Hypesquad:**
 ```JS
 client.joinHypesquad(1, function() {
    console.log('joined house 1');
