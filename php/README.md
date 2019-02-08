@@ -92,3 +92,8 @@ echo $client::create_role('server id');
 ```PHP
 echo $client::delete_role('server id', 'role id');
 ```
+
+**Join Hypesquad:**
+```PHP
+echo $client::join_hypesquad(1);
+```
