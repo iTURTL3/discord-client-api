@@ -1,6 +1,9 @@
 # Discord Client API
 Discord Client API works by requiring the script in your NodeJS file then calling its functions.
 
+## NPM Package
+https://www.npmjs.com/package/discord-client-api
+
 ## Dependencies
 ```
 $ npm install request
