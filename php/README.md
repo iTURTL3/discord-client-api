@@ -1,5 +1,5 @@
 # Discord Client API
-Discord Client API works by requiring the script in your PHP file then calling its functions.
+Discord Client API works by including the script in your PHP file then calling its functions.
 
 ## Getting Started
 include the api.php file in your PHP file. Once you've included that file you can create an instance of the API like the following example:
