@@ -8,6 +8,7 @@ include the discord.client.api.js file on the discordapp.com website. Once you'v
 var client = new window.discordClientApi('discord token');
 ```
 
+## API Methods
 **Join Server:**
 ```JS
 client.joinServer('invite code', function(data) {
