@@ -7,7 +7,7 @@ $ npm install request
 ```
 
 ## Getting Started
-Require the api.js file or the discord-client-api package and create an instance of the API like the following examples:
+Require the api.js file and create an instance of the API like the following example:
 
 ```JS
 var client = new (require('./api.js'))('discord token');
