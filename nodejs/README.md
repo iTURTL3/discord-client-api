@@ -1,6 +1,11 @@
 # Discord Client API
 Discord Client API works by requiring the script in your NodeJS file then calling its functions.
 
+## Dependencies
+```
+$ npm install request
+```
+
 ## Getting Started
 Require the api.js file and create an instance of the API like the following example:
 
