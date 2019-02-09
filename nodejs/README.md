@@ -1,20 +1,22 @@
 # Discord Client API
 Discord Client API works by requiring the script in your NodeJS file then calling its functions.
 
-## NPM Package
-https://www.npmjs.com/package/discord-client-api
-
 ## Dependencies
 ```
 $ npm install request
 ```
 
 ## Getting Started
-Require the api.js file and create an instance of the API like the following example:
+Require the api.js file or the discord-client-api package and create an instance of the API like the following examples:
 
 ```JS
 var client = new (require('./api.js'))('discord token');
 ```
+or
+```JS
+var client = new (require('discord-client-api'))('discord token');
+```
+
 
 **Join Server:**
 ```JS
@@ -141,3 +143,6 @@ client.joinHypesquad(1, function(data) {
    console.log(data);
 });
 ```
+
+## NPM Package
+https://www.npmjs.com/package/discord-client-api
