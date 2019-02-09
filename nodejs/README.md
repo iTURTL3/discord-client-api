@@ -20,7 +20,7 @@ Require the discord-client-api module and create an instance of the API like the
 var client = new (require('discord-client-api'))('discord token');
 ```
 
-## Examples
+## API Methods
 **Join Server:**
 ```JS
 client.joinServer('invite code', function(data) {
