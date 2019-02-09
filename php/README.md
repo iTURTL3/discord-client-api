@@ -8,6 +8,7 @@ include the discord.client.api.php file in your PHP file. Once you've included t
 $client = new discord_client_api('discord token');
 ```
 
+## API Methods
 **Join Server:**
 ```PHP
 echo $client::join_server('invite code');
