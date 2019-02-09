@@ -8,7 +8,10 @@
 discord-client-api works by requiring the package in your NodeJS file then calling its functions.
 
 ## Installation
-To install the package type the following: npm install discord-client-api
+To install the package type the following:
+```
+npm install discord-client-api
+```
 
 ## Getting Started
 Require the discord-client-api module and create an instance of the API like the following example:
