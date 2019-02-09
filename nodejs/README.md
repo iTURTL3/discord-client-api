@@ -12,11 +12,6 @@ Require the api.js file or the discord-client-api package and create an instance
 ```JS
 var client = new (require('./api.js'))('discord token');
 ```
-or
-```JS
-var client = new (require('discord-client-api'))('discord token');
-```
-
 
 **Join Server:**
 ```JS
