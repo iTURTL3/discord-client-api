@@ -146,6 +146,3 @@ client.joinHypesquad(1, function(data) {
    console.log(data);
 });
 ```
-
-## NPM Package
-https://www.npmjs.com/package/discord-client-api
