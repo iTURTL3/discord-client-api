@@ -44,12 +44,20 @@ window.discordClientApi = function(token) {
       self.apiRequest('DELETE', 'users/@me/guilds/' + serverId, null, callback);
    };
 
+   self.getServers = function(callback) {
+      self.apiRequest('GET', 'users/@me/guilds', null, callback);
+   };
+
    self.sendMessage = function(channelId, message, callback) {
       self.apiRequest('POST', 'channels/' + channelId + '/messages', JSON.stringify({'content': message, 'nonce': Date.now(), 'tts': false}), callback);
    };
 
    self.deleteMessage = function(channelId, messageId, callback) {
       self.apiRequest('DELETE', 'channels/' + channelId + '/messages/' + messageId, null, callback);
+   };
+
+   self.getMessages = function(channelId, amount, callback) {
+      self.apiRequest('GET', 'channels/' + channelId + '/messages?limit=' + amount, null, callback);
    };
 
    self.addReaction = function(channelId, messageId, reaction, callback) {
@@ -62,10 +70,6 @@ window.discordClientApi = function(token) {
 
    self.isTyping = function(channelId, callback) {
       self.apiRequest('POST', 'channels/' + channelId + '/typing', null, callback);
-   };
-
-   self.getMessages = function(channelId, amount, callback) {
-      self.apiRequest('GET', 'channels/' + channelId + '/messages?limit=' + amount, null, callback);
    };
 
    self.changeNickname = function(serverId, nickname, callback) {
