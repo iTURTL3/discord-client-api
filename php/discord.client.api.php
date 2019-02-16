@@ -47,7 +47,7 @@ class discord_client_api {
       return self::api_request('DELETE', 'users/@me/guilds/' . $server_id, null);
    }
 
-   public static function get_servers($amount) {
+   public static function get_servers() {
       return self::api_request('GET', 'users/@me/guilds', null);
    }
 
