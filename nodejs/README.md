@@ -35,6 +35,13 @@ client.leaveServer('server id', function(data) {
 });
 ```
 
+**Get Servers:**
+```JS
+client.getServers(function(data) {
+   console.log(data);
+});
+```
+
 **Send Message:**
 ```JS
 client.sendMessage('channel id', 'message', function(data) {
@@ -45,6 +52,13 @@ client.sendMessage('channel id', 'message', function(data) {
 **Delete Message:**
 ```JS
 client.deleteMessage('channel id', 'message id', function(data) {
+   console.log(data);
+});
+```
+
+**Get Messages:**
+```JS
+client.getMessages('channel id', 25, function(data) {
    console.log(data);
 });
 ```
@@ -66,13 +80,6 @@ client.removeReaction('channel id', 'message id', '🐢', function(data) {
 **Is Typing:**
 ```JS
 client.isTyping('channel id', function(data) {
-   console.log(data);
-});
-```
-
-**Get Messages:**
-```JS
-client.getMessages('channel id', 25, function(data) {
    console.log(data);
 });
 ```
