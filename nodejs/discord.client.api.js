@@ -58,6 +58,10 @@ module.exports = function(token) {
       self.apiRequest('DELETE', 'channels/' + channelId + '/messages/' + messageId, null, callback);
    };
 
+   self.getMessages = function(channelId, amount, callback) {
+      self.apiRequest('GET', 'channels/' + channelId + '/messages?limit=' + amount, null, callback);
+   };
+
    self.addReaction = function(channelId, messageId, reaction, callback) {
       self.apiRequest('PUT', 'channels/' + channelId + '/messages/' + messageId + '/reactions/' + reaction + '/@me', null, callback);
    };
@@ -68,10 +72,6 @@ module.exports = function(token) {
 
    self.isTyping = function(channelId, callback) {
       self.apiRequest('POST', 'channels/' + channelId + '/typing', null, callback);
-   };
-
-   self.getMessages = function(channelId, amount, callback) {
-      self.apiRequest('GET', 'channels/' + channelId + '/messages?limit=' + amount, null, callback);
    };
 
    self.changeNickname = function(serverId, nickname, callback) {
