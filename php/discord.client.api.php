@@ -47,12 +47,20 @@ class discord_client_api {
       return self::api_request('DELETE', 'users/@me/guilds/' . $server_id, null);
    }
 
+   public static function get_servers($amount) {
+      return self::api_request('GET', 'users/@me/guilds', null);
+   }
+
    public static function send_message($channel_id, $message) {
       return self::api_request('POST', 'channels/' . $channel_id . '/messages', json_encode(array('content' => $message, 'nonce' => time(), 'tts' => false)));
    }
 
    public static function delete_message($channel_id, $message_id) {
       return self::api_request('DELETE', 'channels/' . $channel_id . '/messages/' . $message_id, null);
+   }
+
+   public static function get_messages($channel_id, $amount) {
+      return self::api_request('GET', 'channels/' . $channel_id . '/messages?limit=' . $amount, null);
    }
 
    public static function add_reaction($channel_id, $message_id, $reaction) {
@@ -65,10 +73,6 @@ class discord_client_api {
 
    public static function is_typing($channel_id) {
       return self::api_request('POST', 'channels/' . $channel_id . '/typing', null);
-   }
-
-   public static function get_messages($channel_id, $amount) {
-      return self::api_request('GET', 'channels/' . $channel_id . '/messages?limit=' . $amount, null);
    }
 
    public static function change_nickname($server_id, $nickname) {
