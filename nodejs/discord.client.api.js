@@ -46,6 +46,10 @@ module.exports = function(token) {
       self.apiRequest('DELETE', 'users/@me/guilds/' + serverId, null, callback);
    };
 
+   self.getServers = function(callback) {
+      self.apiRequest('GET', 'users/@me/guilds', null, callback);
+   };
+
    self.sendMessage = function(channelId, message, callback) {
       self.apiRequest('POST', 'channels/' + channelId + '/messages', JSON.stringify({'content': message, 'nonce': Date.now(), 'tts': false}), callback);
    };
