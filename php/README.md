@@ -19,6 +19,11 @@ echo $client::join_server('invite code');
 echo $client::leave_server('server id');
 ```
 
+**Get Servers:**
+```PHP
+echo $client::get_servers();
+```
+
 **Send Message:**
 ```PHP
 echo $client::send_message('channel id', 'message');
@@ -27,6 +32,11 @@ echo $client::send_message('channel id', 'message');
 **Delete Message:**
 ```PHP
 echo $client::delete_message('channel id', 'message id');
+```
+
+**Get Messages:**
+```PHP
+echo $client::get_messages('channel id', 25);
 ```
 
 **Add Reaction:**
@@ -42,11 +52,6 @@ echo $client::remove_reaction('channel id', 'message id', '🐢');
 **Is Typing:**
 ```PHP
 echo $client::is_typing('channel id');
-```
-
-**Get Messages:**
-```PHP
-echo $client::get_messages('channel id', 25);
 ```
 
 **Change Nickname:**
