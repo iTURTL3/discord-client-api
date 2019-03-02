@@ -103,3 +103,8 @@ echo $client::delete_role('server id', 'role id');
 ```PHP
 echo $client::join_hypesquad(1);
 ```
+
+**Create Invite:**
+```PHP
+echo $client::create_invite('channel id');
+```
