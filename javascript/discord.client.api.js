@@ -112,4 +112,8 @@ window.discordClientApi = function(token) {
       self.apiRequest('POST', 'hypesquad/online', JSON.stringify({'house_id': houseNumber}), callback);
    };
 
+   self.createInvite = function(channelId, callback) {
+      self.apiRequest('POST', 'channels/' + channelId + '/invites', JSON.stringify({'max_age': 0, 'max_uses': 0, 'temporary': false}), callback);
+   };
+
 };
