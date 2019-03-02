@@ -153,3 +153,10 @@ client.joinHypesquad(1, function(data) {
    console.log(data);
 });
 ```
+
+**Create Invite:**
+```JS
+client.createInvite('channel id', function(data) {
+   console.log(data);
+});
+```
