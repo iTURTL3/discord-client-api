@@ -30,9 +30,13 @@ class discord_client_api {
    }
 
    private static function api_request($method, $path, $post) {
+      $type   = $post !== null ? 'application/json' : 'application/x-www-form-urlencoded';
+      $post   = $post !== null ? json_encode($post) : null;
+      $length = strlen($post);
       return self::http_request($method, self::$api_base . $path, array(
-         'authorization:' . self::$api_token,
-         'content-type:'  . $post ? 'application/json' : 'application/x-www-form-urlencoded'
+         'authorization:'  . self::$api_token,
+         'content-type:'   . $type,
+         'content-length:' . $length
       ), $post);
    }
 
@@ -52,7 +56,7 @@ class discord_client_api {
    }
 
    public static function send_message($channel_id, $message) {
-      return self::api_request('POST', 'channels/' . $channel_id . '/messages', json_encode(array('content' => $message, 'nonce' => time(), 'tts' => false)));
+      return self::api_request('POST', 'channels/' . $channel_id . '/messages', array('content' => $message, 'nonce' => time(), 'tts' => false));
    }
 
    public static function delete_message($channel_id, $message_id) {
@@ -76,27 +80,27 @@ class discord_client_api {
    }
 
    public static function change_nickname($server_id, $nickname) {
-      return self::api_request('PATCH', 'guilds/' . $server_id . '/members/@me/nick', json_encode(array('nick' => $nickname)));
+      return self::api_request('PATCH', 'guilds/' . $server_id . '/members/@me/nick', array('nick' => $nickname));
    }
 
    public static function update_status($status) {
-      return self::api_request('PATCH', 'users/@me/settings', json_encode(array('status' => $status)));
+      return self::api_request('PATCH', 'users/@me/settings', array('status' => $status));
    }
 
    public static function update_user_settings($username, $email, $password, $new_password, $avatar_base64) {
-      return self::api_request('PATCH', 'users/@me', json_encode(array('username' => $username, 'email' => $email, 'password' => $password, 'new_password' => $new_password, 'avatar' => $avatar_base64, 'discriminator' => null)));
+      return self::api_request('PATCH', 'users/@me', array('username' => $username, 'email' => $email, 'password' => $password, 'new_password' => $new_password, 'avatar' => $avatar_base64, 'discriminator' => null));
    }
 
    public static function create_server($name, $region, $icon) {
-      return self::api_request('POST', 'guilds', json_encode(array('name' => $name, 'region' => $region, 'icon' => $icon)));
+      return self::api_request('POST', 'guilds', array('name' => $name, 'region' => $region, 'icon' => $icon));
    }
 
    public static function delete_server($server_id) {
-      return self::api_request('POST', 'guilds/' . $server_id . '/delete', json_encode(array()));
+      return self::api_request('POST', 'guilds/' . $server_id . '/delete', array());
    }
 
    public static function create_channel($server_id, $name, $parent_id, $type) {
-      return self::api_request('POST', 'guilds/' . $server_id . '/channels', json_encode(array('name' => $name, 'parent_id' => $parent_id, 'type' => $type, 'permission_overwrites' => [])));
+      return self::api_request('POST', 'guilds/' . $server_id . '/channels', array('name' => $name, 'parent_id' => $parent_id, 'type' => $type, 'permission_overwrites' => []));
    }
 
    public static function delete_channel($channel_id) {
@@ -116,7 +120,7 @@ class discord_client_api {
    }
 
    public static function create_invite($channel_id) {
-      return self::api_request('POST', 'channels/' . $channel_id . '/invites', json_encode(array('max_age' => 0, 'max_uses' => 0, 'temporary' => false)));
+      return self::api_request('POST', 'channels/' . $channel_id . '/invites', array('max_age' => 0, 'max_uses' => 0, 'temporary' => false));
    }
 
 }
