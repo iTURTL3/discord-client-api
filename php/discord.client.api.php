@@ -116,7 +116,7 @@ class discord_client_api {
    }
 
    public static function join_hypesquad($house_number) {
-      return self::api_request('POST', 'hypesquad/online', json_encode(array('house_id' => $house_number)));
+      return self::api_request('POST', 'hypesquad/online', array('house_id' => $house_number));
    }
 
    public static function create_invite($channel_id) {
